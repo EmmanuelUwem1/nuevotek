@@ -70,7 +70,7 @@ function Header() {
         >
           <Image
             alt="logo"
-            src={"/logo full.png"}
+            src={"/Logo full.png"}
             layout="fill"
             objectFit="cover"
             objectPosition="center"
