@@ -68,9 +68,19 @@ function Header() {
           href={"/"}
           className={`font-styrene font-bold text-2xl relative w-36 h-9`}
         >
-          <Image alt="logo" src={"/logo full.png"} layout="fill"></Image>
+          <Image
+            alt="logo"
+            src={"/logo full.png"}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+          ></Image>
         </Link>
-        <nav className={`flex lg:justify-between items-center gap-16 lg:flex ${navMenuOpen ? "open" : ""}`}>
+        <nav
+          className={`flex lg:justify-between items-center gap-16 lg:flex ${
+            navMenuOpen ? "open" : ""
+          }`}
+        >
           {navLinks.map((navLink) => (
             <Link
               key={navLink.title}
