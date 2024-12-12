@@ -1,21 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FCFCFC;
+  /* --foreground: #171717; */
+  --primary-color:#040A7C;
+  --brand-black:#000000;
 }
 
-@media (prefers-color-scheme: dark) {
+/* font */
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-Italic.eot');
+    src: local('Styrene A Web Italic'), local('StyreneAWeb-Italic'),
+        url('StyreneAWeb-Italic.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-Italic.woff2') format('woff2'),
+        url('StyreneAWeb-Italic.woff') format('woff'),
+        url('StyreneAWeb-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-LightItalic.eot');
+    src: local('Styrene A Web Light Italic'), local('StyreneAWeb-LightItalic'),
+        url('StyreneAWeb-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-LightItalic.woff2') format('woff2'),
+        url('StyreneAWeb-LightItalic.woff') format('woff'),
+        url('StyreneAWeb-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-Thin.eot');
+    src: local('Styrene A Web Thin'), local('StyreneAWeb-Thin'),
+        url('StyreneAWeb-Thin.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-Thin.woff2') format('woff2'),
+        url('StyreneAWeb-Thin.woff') format('woff'),
+        url('StyreneAWeb-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-BoldItalic.eot');
+    src: local('Styrene A Web Bold Italic'), local('StyreneAWeb-BoldItalic'),
+        url('StyreneAWeb-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-BoldItalic.woff2') format('woff2'),
+        url('StyreneAWeb-BoldItalic.woff') format('woff'),
+        url('StyreneAWeb-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-BlackItalic.eot');
+    src: local('Styrene A Web Black Italic'), local('StyreneAWeb-BlackItalic'),
+        url('StyreneAWeb-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-BlackItalic.woff2') format('woff2'),
+        url('StyreneAWeb-BlackItalic.woff') format('woff'),
+        url('StyreneAWeb-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-Regular.eot');
+    src: local('Styrene A Web Regular'), local('StyreneAWeb-Regular'),
+        url('StyreneAWeb-Regular.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-Regular.woff2') format('woff2'),
+        url('StyreneAWeb-Regular.woff') format('woff'),
+        url('StyreneAWeb-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-Black.eot');
+    src: local('Styrene A Web Black'), local('StyreneAWeb-Black'),
+        url('StyreneAWeb-Black.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-Black.woff2') format('woff2'),
+        url('StyreneAWeb-Black.woff') format('woff'),
+        url('StyreneAWeb-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-Medium.eot');
+    src: local('Styrene A Web Medium'), local('StyreneAWeb-Medium'),
+        url('StyreneAWeb-Medium.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-Medium.woff2') format('woff2'),
+        url('StyreneAWeb-Medium.woff') format('woff'),
+        url('StyreneAWeb-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-ThinItalic.eot');
+    src: local('Styrene A Web Thin Italic'), local('StyreneAWeb-ThinItalic'),
+        url('StyreneAWeb-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-ThinItalic.woff2') format('woff2'),
+        url('StyreneAWeb-ThinItalic.woff') format('woff'),
+        url('StyreneAWeb-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-Bold.eot');
+    src: local('Styrene A Web Bold'), local('StyreneAWeb-Bold'),
+        url('StyreneAWeb-Bold.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-Bold.woff2') format('woff2'),
+        url('StyreneAWeb-Bold.woff') format('woff'),
+        url('StyreneAWeb-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-Light.eot');
+    src: local('Styrene A Web Light'), local('StyreneAWeb-Light'),
+        url('StyreneAWeb-Light.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-Light.woff2') format('woff2'),
+        url('StyreneAWeb-Light.woff') format('woff'),
+        url('StyreneAWeb-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Styrene A Web';
+    src: url('StyreneAWeb-MediumItalic.eot');
+    src: local('Styrene A Web Medium Italic'), local('StyreneAWeb-MediumItalic'),
+        url('StyreneAWeb-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-MediumItalic.woff2') format('woff2'),
+        url('StyreneAWeb-MediumItalic.woff') format('woff'),
+        url('StyreneAWeb-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+*{
+  outline:none;
+}
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.font-styrene{
+      font-family: 'Styrene A Web', Poppins, sans-serif;
+    src: url('StyreneAWeb-Thin.eot');
+    src: local('Styrene A Web Thin'), local('StyreneAWeb-Thin'),
+        url('StyreneAWeb-Thin.eot?#iefix') format('embedded-opentype'),
+        url('StyreneAWeb-Thin.woff2') format('woff2'),
+        url('StyreneAWeb-Thin.woff') format('woff'),
+        url('StyreneAWeb-Thin.ttf') format('truetype');
+    font-style: normal;
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
 }
+.bottom{
+  position: relative;
+}
+.bottom:hover::before{
+  width: 100%;
+}
+.active{
+  position: relative;
+}
+.active::before{
+   position: absolute;
+  content: '';
+  background-color: var(--primary-color);
+  height: 3px;
+  transition: .4s;
+  bottom: -2px;
+  left: 0px;
+    width: 100%;
+
+}
+.bottom::before{
+  position: absolute;
+  content: '';
+  background-color: var(--primary-color);
+  height: 3px;
+  transition: .4s;
+  bottom: -2px;
+  left: 0px;
+  width: 0%;
+}
+.cards-hover{
+  transition: all .2s ease;
+}
+.cards-hover:hover{
+  background-color: var(--primary-color);
+  background-image: url('/abstract 2.png');
+}
+.cards-hover:hover :first-child :first-child{
+display: none;
+}
+.cards-hover:hover *{
+  color: white;
+}
+.cards-hover:hover :first-child :nth-child(2){
+  font-weight: 400;
+}
+.cards-hover:hover :nth-child(2){
+  font-weight: 300;
+}
+@media (max-width:1024px){
+  nav{
+    background-color: var(--primary-color);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 2000;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: all .5s ease;
+    right: -100%;
+    top: 0;
+  }
+  nav.open{
+    right: 0%;
+  }
+}
+
+
+@media (max-width: 370px){
+  *{
+    font-size: 4.2vw;
+  }
+}
+
+
