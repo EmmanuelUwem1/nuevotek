@@ -1,23 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { useState } from "react";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Twirl as Hamburger } from "hamburger-react";
 
 function Header() {
-  const path = useParams();
+  const pathname = usePathname();
   const [navMenuOpen, setNavmenu] = useState(false);
-  function toggleMenu() {
-    setNavmenu(!navMenuOpen);
-  }
+
+
+
   const navLinks = [
     { title: "Home", href: "/" },
     { title: "About", href: "/about" },
     { title: "Services", href: "/services" },
     { title: "Contact", href: "/contact" },
   ];
+
   return (
     <header className="flex w-full h-fit flex-col relative">
       <div className="flex gap-4 w-full bg-[var(--primary-color)] h-8 md:h-12 justify-end px-4 lg:px-20 items-center">
@@ -32,10 +32,10 @@ function Header() {
             ></Image>
           </span>
           <a
-            href="mailto:nuevoteksolutions@gmail.com "
+            href="mailto:nuevoteksolutions@gmail.com"
             className="text-white font-styrene sm:text-sm font-medium text-[0.6rem]"
           >
-            nuevoteksolutions@gmail.com{" "}
+            nuevoteksolutions@gmail.com
           </a>
         </span>
         <span className="flex justify-center items-center w-fit text-white gap-1 text-[0.6rem] sm:text-base text-right">
@@ -70,12 +70,9 @@ function Header() {
         >
           <Image
             alt="logo"
-                      src={"/Logo full.png"}
-                      height={36}
-                      width={150}
-            // layout="fill"
-            // objectFit="cover"
-            // objectPosition="center"
+            src={"/Logo full.png"}
+            height={36}
+            width={150}
           ></Image>
         </Link>
         <nav
@@ -87,9 +84,10 @@ function Header() {
             <Link
               key={navLink.title}
               href={navLink.href}
-              className={`font-medium text-lg relative bottom ${
-                navLink.href == path ? "active" : ""
+              className={`font-medium text-lg relative ${
+                pathname === navLink.href ? "active" : "bottom"
               }`}
+              onClick={() => setNavmenu(false)}
             >
               {navLink.title}
             </Link>
@@ -97,25 +95,27 @@ function Header() {
 
           <Link
             href={"#"}
-            className="font-styrene font-medium text-base bg-[var(--primary-color)] text-[#FFFFFF] px-8 py-3 rounded transition-all hover:opacity-80"
+            className={`font-styrene font-medium text-base bg-[var(--primary-color)] text-[#FFFFFF] px-8 py-3 rounded transition-all hover:opacity-80 ${
+              navMenuOpen ? "bg-black" : ""
+            }`}
+            onClick={() => setNavmenu(false)}
           >
             Our Brochure
           </Link>
         </nav>
-        <div className="flex absolute right-0 lg:hidden p-0 m-0 z-[2000]">
+        <div
+          className={`flex right-0 lg:hidden p-0 m-0 z-[2000] ${
+            navMenuOpen ? "fixed right-2 top-[5rem] md:top-[7rem]" : "absolute"
+          }`}
+        >
           <Hamburger
             size={25}
             direction="left"
             duration={0.5}
-            color="black"
-            className=""
-            onToggle={(toggled) => {
-              if (toggled) {
-                toggleMenu();
-              } else {
-                toggleMenu();
-              }
-            }}
+            color={`${navMenuOpen ? "white" : "black"}`}
+            className={``}
+            toggled={navMenuOpen}
+            toggle={() => setNavmenu(!navMenuOpen)}
           />
         </div>
       </div>

@@ -26,7 +26,7 @@ export default function Home() {
 
           <Link
             href={"/"}
-            className="font-styrene font-medium text-base bg-[#07E02B] transition-all hover:opacity-80 text-[#FFFFFF] px-8 py-3 "
+            className="font-styrene font-medium text-base bg-[#07E02B] transition-all hover:bg-white hover:text-[#07E02B] text-[#FFFFFF] px-8 py-3 "
           >
             See all Solutions
           </Link>
@@ -67,7 +67,7 @@ export default function Home() {
 
           <Link
             href={"/"}
-            className="font-styrene font-medium text-base bg-[var(--primary-color)] transition-all hover:opacity-80 text-[#FFFFFF] px-8 py-3"
+            className="font-styrene font-medium text-base bg-[var(--primary-color)] transition-all hover:bg-black text-[#FFFFFF] px-8 py-3"
           >
             Send a Message
           </Link>

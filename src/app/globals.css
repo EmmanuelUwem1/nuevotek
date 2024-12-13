@@ -41,7 +41,7 @@ input[type="number"] {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
 
 }
 .bottom{
@@ -97,19 +97,42 @@ display: none;
   nav{
     background-color: var(--primary-color);
     position: fixed;
-    height: 100vh;
+    height: calc(100vh-7rem);
+    top: 7rem;
     width: 100%;
     z-index: 2000;
     flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: start;
+    gap: 1.5rem;
+    padding: 4rem 2rem  ;
     transition: all .5s ease;
     right: -100%;
-    top: 0;
+    
   }
   nav.open{
     right: 0%;
   }
+  nav a{
+    color: var(--background);
+  }
+  .active::before{
+   position: absolute;
+  content: '';
+  background-color: var(--background);
+  height: 3px;
+  transition: .4s;
+  bottom: -2px;
+  left: 0px;
+    width: 100%;
+
+}
+
+}
+@media (max-width:768px){
+nav{
+   height: calc(100vh-5rem);
+    top: 5rem;
+}
 }
 
 
@@ -120,3 +143,4 @@ display: none;
 }
 
 
+/* swiper */

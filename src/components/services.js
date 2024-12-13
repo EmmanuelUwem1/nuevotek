@@ -21,7 +21,7 @@ function Services() {
               <span className="relative flex justify-center items-center h-10 w-10 self-start">
                 <Image
                   alt=""
-                  src={"/triangle.png"}
+                  src={service.image}
                   height={40}
                   width={40}
                 ></Image>
