@@ -7,7 +7,7 @@ function Services() {
       <h2 className="text-black font-medium text-lg lg:text-2xl lg:pl-20 sm:pl-8 pl-4 pt-16">
         Our
       </h2>
-      <p className="text-black font-medium text-3xl lg:text-5xl sm:pl-8 lg:pl-20 pl-4 mb-16">
+      <p className="text-black font-medium text-3xl lg:text-5xl sm:pl-8 lg:pl-20 pl-4 mb-10">
         Services
       </p>
       <div className=" flex justify-center items-center lg:px-20 sm:px-8 px-4 pb-8">
