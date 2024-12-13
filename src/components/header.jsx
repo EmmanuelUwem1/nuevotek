@@ -19,7 +19,7 @@ function Header() {
     { title: "Contact", href: "/contact" },
   ];
   return (
-    <header className="flex w-full h-fit flex-col">
+    <header className="flex w-full h-fit flex-col relative">
       <div className="flex gap-4 w-full bg-[var(--primary-color)] h-8 md:h-12 justify-end px-4 lg:px-20 items-center">
         <span className="flex justify-center items-center gap-1 w-fit">
           <span className="sm:h-5 sm:w-5 w-3 h-3 flex justify-center items-center relative">
@@ -66,14 +66,16 @@ function Header() {
       <div className="flex w-full justify-between items-center px-4 md:px-20 h-12 md:h-20">
         <Link
           href={"/"}
-          className={`font-styrene font-bold text-2xl relative w-36 h-9`}
+          className={`font-styrene font-bold text-2xl relative w-fit h-fit`}
         >
           <Image
             alt="logo"
-            src={"/Logo full.png"}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
+                      src={"/Logo full.png"}
+                      height={36}
+                      width={150}
+            // layout="fill"
+            // objectFit="cover"
+            // objectPosition="center"
           ></Image>
         </Link>
         <nav
@@ -85,7 +87,7 @@ function Header() {
             <Link
               key={navLink.title}
               href={navLink.href}
-              className={`font-styrene font-medium text-lg relative bottom ${
+              className={`font-medium text-lg relative bottom ${
                 navLink.href == path ? "active" : ""
               }`}
             >
