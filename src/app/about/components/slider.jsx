@@ -72,7 +72,7 @@ function Slider() {
           <Image alt="" src={"/arrow-left.png"} height={56} width={56}></Image>
         </span>
         <span
-          className="relative h-14 w-14 cursor-pointer overflow-hidden"
+          className="relative h-12 w-12 cursor-pointer overflow-hidden"
           onClick={() => swiperRef.current?.slideNext()}
         >
           <Image alt="" src={"/arrow-right.png"} height={56} width={56}></Image>
