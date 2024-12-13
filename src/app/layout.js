@@ -1,3 +1,4 @@
+// app/layout.js
 import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/header";
@@ -14,22 +15,22 @@ export const metadata = {
 const myFont = localFont({
   src: [
     {
-      path: "./fonts/StyreneAWeb-Regular.woff2",
+      path: "/fonts/StyreneAWeb-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/StyreneAWeb-Medium.woff2",
+      path: "/fonts/StyreneAWeb-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/StyreneAWeb-Medium.woff2",
+      path: "/fonts/StyreneAWeb-Medium.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "./fonts/StyreneAWeb-Bold.woff2",
+      path: "/fonts/StyreneAWeb-Bold.woff2",
       weight: "700",
       style: "bold",
     },
@@ -42,7 +43,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={myFont.className}>
         <Header />
-        <main className="">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

@@ -57,8 +57,8 @@ function Services() {
               key={service.title}
               className="flex items-start justify-between w-full md:w-[48%] rounded-lg bg-white border-[1px] border-[#D0D0D0] gap-3 px-6 py-10"
               >
-                  <span className="relative h-16 w-16">
-                      <Image alt="" src={service.image} layout="fill" objectFit="contain" objectPosition="center"></Image>
+                  <span className="relative flex justify-center items-center h-16 w-16">
+                      <Image alt="" src={service.image} height={60} width={60} objectFit="contain" objectPosition="center"></Image>
                   </span>
                   <div className="flex flex-col gap-6 items-start justify-between">
                       <h2 className="font-bold text-2xl text-[var(--primary-color)]">{service.title}</h2>

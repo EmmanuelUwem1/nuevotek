@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "hamburger-react": "^2.5.1",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-toastify": "^10.0.6",
     "swiper": "^11.1.15"
   },
   "devDependencies": {

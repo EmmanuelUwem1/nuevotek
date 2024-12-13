@@ -22,7 +22,7 @@ function Slider() {
         slidesPerView={1}
         spaceBetween={20}
         loop={true}
-        centeredSlides={false}
+        centeredSlides={true}
         grabCursor={true}
         effect="coverflow"
         pagination={{

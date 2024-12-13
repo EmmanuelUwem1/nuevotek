@@ -10,7 +10,7 @@ function About() {
       <p className="text-black font-medium text-3xl lg:text-5xl sm:pl-8 lg:pl-20 pl-4 mb-16">
         Nuevotek
       </p>
-      <div className="flex justify-start items-center pl-4 sm:pl-8 lg:pl-20">
+      <div className="flex justify-start items-center pl-0 sm:pl-8 lg:pl-20">
         <Slider />
       </div>
       <div className="flex items-center justify-center w-full">

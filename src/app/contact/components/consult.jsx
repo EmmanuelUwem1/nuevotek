@@ -1,14 +1,16 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
 
 function PhoneNumberInput() {
   return (
     <input
       type="text"
       id="phone"
-      name="phone"
+      name="user_number"
       placeholder="Phone Number"
       className="bg-[#F4F4F4] h-16 flex w-full rounded-sm px-4 focus:border-[1px] focus:border-[var(--primary-color)]"
       onKeyDown={(e) => {
@@ -38,6 +40,56 @@ function PhoneNumberInput() {
 }
 
 function Consult() {
+  const [userInput, setUserInput] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserInput({
+      ...userInput,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    try {
+      const emailParams = {
+        name: userInput.name,
+        email: userInput.email,
+        message: userInput.message,
+      };
+
+      const res = await emailjs.send(
+        serviceID,
+        templateID,
+        emailParams,
+        userID
+      );
+
+      if (res.status === 200) {
+        toast.success("Message sent successfully!");
+        setUserInput({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.");
+    }
+  };
+
+  const form = useRef();
+
   return (
     <section className="flex md:pl-20 sm:pl-8 flex-wrap pl-4 w-full py-16">
       <div className="flex flex-col w-full md:w-1/2 justify-start items-start h-full">
@@ -51,18 +103,23 @@ function Consult() {
           Feel free to reach out using the information below or submit your
           request here.
         </p>
-        <form className="flex justify-normal flex-col items-center w-full gap-4 pr-4 mt-8">
+        <form
+          ref={form}
+          onSubmit={handleSubmit}
+          className="flex justify-normal flex-col items-center w-full gap-4 pr-4 mt-8"
+        >
           <div className="flex flex-wrap md:flex-nowrap w-full gap-4">
             <input
               type="text"
-              name="first-name"
+              name="name"
+              onChange={handleChange}
               id="first-name"
               placeholder="First Name"
               className="bg-[#F4F4F4] h-16 flex w-full rounded-sm px-4 focus:border-[1px] focus:border-[var(--primary-color)]"
             />
             <input
               type="text"
-              name="last-name"
+              name="last_name"
               id="last-name"
               placeholder="Last Name"
               className="bg-[#F4F4F4] h-16 flex w-full rounded-sm px-4 focus:border-[1px] focus:border-[var(--primary-color)]"
@@ -71,7 +128,9 @@ function Consult() {
           <div className="flex flex-wrap md:flex-nowrap w-full gap-4">
             <input
               type="email"
+              onChange={handleChange}
               name="email"
+              value={userInput.email}
               id="email"
               placeholder="Email Address"
               className="bg-[#F4F4F4] h-16 flex w-full rounded-sm px-4 focus:border-[1px] focus:border-[var(--primary-color)]"
@@ -80,13 +139,18 @@ function Consult() {
           </div>
           <div className="flex w-full">
             <textarea
-              name="case"
+              name="message"
               id="case"
+              value={userInput.message}
+              onChange={handleChange}
               placeholder="Case Details"
               className="bg-[#F4F4F4] h-72 w-full rounded-sm p-4 focus:border-[1px] focus:border-[var(--primary-color)]"
             ></textarea>
           </div>
-          <button className="font-styrene flex w-full justify-center items-center font-medium text-base bg-[var(--primary-color)] text-[#FFFFFF] px-8 py-3 transition-all hover:opacity-80">
+          <button
+            name="user_first_name"
+            className="font-styrene flex w-full justify-center items-center font-medium text-base bg-[var(--primary-color)] text-[#FFFFFF] px-8 py-3 transition-all hover:opacity-80"
+          >
             Send a Message
           </button>
         </form>
@@ -99,6 +163,7 @@ function Consult() {
           className="z-0"
         ></Image>
       </div>
+      <ToastContainer />
     </section>
   );
 }
