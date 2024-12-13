@@ -15,7 +15,7 @@ export default function Home() {
           objectPosition="center"
           className="z-0 absolute object-fill"
         ></Image>
-        <div className="flex flex-col gap-8 w-full lg:w-1/2 justify-center pl-4 lg:pl-20 pr-8 items-start h-full bg-[#00000094] z-10">
+        <div className="flex flex-col gap-8 w-full lg:w-1/2 justify-center pl-4 sm:pl-8 lg:pl-20 pr-8 items-start h-full bg-[#00000094] z-10">
           <p className="font-styrene font-medium text-3xl lg:text-5xl text-left text-[#FFFFFF] z-20">
             Enabling Connectivity with Reliable, Neutral Infrastructure.
           </p>
@@ -25,7 +25,7 @@ export default function Home() {
           </p>
 
           <Link
-            href={"/"}
+            href={"/services"}
             className="font-styrene font-medium text-base bg-[#07E02B] transition-all hover:bg-white hover:text-[#07E02B] text-[#FFFFFF] px-8 py-3 "
           >
             See all Solutions
@@ -44,7 +44,7 @@ export default function Home() {
         </span>
       </section>
       <Services />
-      <section className="flex flex-wrap lg:flex-nowrap gap-8 justify-center items-center w-full mt-8 md:pr-20">
+      <section className="flex flex-wrap lg:flex-nowrap gap-8 justify-center items-center w-full mt-8 sm:pr-8 md:pr-20">
         <div className="flex justify-center items-center w-full lg:w-1/2 h-96 relative">
           <Image alt="" src={"/abstract.png"} layout="fill"></Image>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import servicesData from './servicesData';
+import servicesData from '../app/services/components/servicesData';
 
 function Services() {
   return (
@@ -15,7 +15,7 @@ function Services() {
         {servicesData.map((service) => (
           <div
             key={service.title}
-            className="flex flex-col justify-normal items-start gap-6 bg-white py-14 px-11 rounded-xl border-[#D0D0D0] border-[1px] w-fit lg:w-[32%] h-80 cursor-pointer cards-hover overflow-hidden"
+            className="flex flex-col justify-normal items-start gap-6 bg-white py-10 px-11 rounded-xl border-[#D0D0D0] border-[1px] w-fit lg:w-[32%] h-80 cursor-pointer cards-hover overflow-hidden"
           >
             <div className="flex flex-col justify-start items-center gap-4">
               <span className="relative flex justify-center items-center h-10 w-10 self-start">

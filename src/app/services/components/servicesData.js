@@ -3,13 +3,13 @@ const servicesData = [
     title: "BroadBand",
     detail:
       "Our fast and reliable broadband solutions enable businesses to stay connected and productive, with lightning-fast speeds and exceptional reliability.",
-    image: "/shield-tick.png",
+    image: "/triangle.png",
   },
   {
     title: "Critical Infrastructure Protection (CIP):",
     detail:
       "Our advanced CIP solutions provide businesses with the security and protection they need to safeguard their critical data and networks.",
-    image: "/brifecase-tick.png",
+    image: "/shield-tick.png",
   },
   {
     title: "Cloud Voice",

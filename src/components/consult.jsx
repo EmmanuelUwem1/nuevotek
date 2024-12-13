@@ -39,7 +39,7 @@ function PhoneNumberInput() {
 
 function Consult() {
   return (
-    <section className="flex md:pl-20 flex-wrap pl-4 w-full py-16">
+    <section className="flex md:pl-20 sm:pl-8 flex-wrap pl-4 w-full py-16">
       <div className="flex flex-col w-full md:w-1/2 justify-start items-start h-full">
         <h2 className="font-styrene font-medium text-4xl lg:text-6xl text-[var(--primary-color)]">
           Get Free
