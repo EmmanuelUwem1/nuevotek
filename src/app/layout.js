@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={myFont.className}>
         <Header />
-        <main>{children}</main>
+        <main className="relative">{children}</main>
         <Footer />
       </body>
     </html>

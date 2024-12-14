@@ -19,7 +19,7 @@ function Header() {
   ];
 
   return (
-    <header className="flex w-full h-fit flex-col sticky top-[-2rem] lg:top-[-3rem] z-[2000] bg-[var(--background)]">
+    <header className="flex w-full h-fit flex-col sticky top-[-2rem] shadow-sm md:top-[-3rem] z-[2000] bg-[var(--background)]">
       <div className="flex gap-4 w-full bg-[var(--primary-color)] h-8 md:h-12 justify-end px-4 lg:px-20 items-center">
         <span className="flex justify-center items-center gap-1 w-fit">
           <span className="sm:h-5 sm:w-5 w-3 h-3 flex justify-center items-center relative">
@@ -63,7 +63,7 @@ function Header() {
           </a>
         </span>
       </div>
-      <div className="flex w-full justify-between items-center px-4 sm:px-8 lg:px-20 h-12 md:h-20">
+      <div className="flex w-full justify-between items-center px-4 sm:px-8 lg:px-20 h-14 md:h-20">
         <Link
           href={"/"}
           className={`font-styrene font-bold text-2xl relative w-fit h-fit`}
@@ -85,7 +85,9 @@ function Header() {
               key={navLink.title}
               href={navLink.href}
               className={`font-medium text-lg relative ${
-                pathname === navLink.href ? "active lg:text-[var(--primary-color)]" : "bottom"
+                pathname === navLink.href
+                  ? "active lg:text-[var(--primary-color)]"
+                  : "bottom"
               }`}
               onClick={() => setNavmenu(false)}
             >
@@ -112,7 +114,7 @@ function Header() {
             size={25}
             direction="left"
             duration={0.5}
-            color={`${navMenuOpen ? "white" : "black"}`}
+            color={`${navMenuOpen ? "white" : "var(--primary-color)"}`}
             className={``}
             toggled={navMenuOpen}
             toggle={() => setNavmenu(!navMenuOpen)}

@@ -66,7 +66,7 @@ export default function Home() {
           </p>
 
           <Link
-            href={"/"}
+            href={"contact"}
             className="font-styrene font-medium text-base bg-[var(--primary-color)] transition-all hover:bg-black text-[#FFFFFF] px-8 py-3"
           >
             Send a Message

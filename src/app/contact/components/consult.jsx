@@ -5,12 +5,16 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 
-function PhoneNumberInput() {
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+
+function PhoneNumberInput({ value, onChange }) {
   return (
     <input
       type="text"
       id="phone"
-      name="user_number"
+      name="number"
+      value={value}
+      onChange={onChange}
       placeholder="Phone Number"
       className="bg-[#F4F4F4] h-16 flex w-full rounded-sm px-4 focus:border-[1px] focus:border-[var(--primary-color)]"
       onKeyDown={(e) => {
@@ -42,8 +46,10 @@ function PhoneNumberInput() {
 function Consult() {
   const [userInput, setUserInput] = useState({
     name: "",
+    company_name: "",
     email: "",
     message: "",
+    number: "",
   });
 
   const handleChange = (e) => {
@@ -57,22 +63,25 @@ function Consult() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    // const serviceID = process.env.local.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    // const templateID = process.env.local.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    // const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
     try {
       const emailParams = {
         name: userInput.name,
         email: userInput.email,
+        number: userInput.number,
+        to_name: "Nuevotek Solutions Limited",
+        company_name: userInput.company_name,
         message: userInput.message,
       };
 
       const res = await emailjs.send(
-        serviceID,
-        templateID,
+        "service_srgtzqd",
+        "template_0g4uc1a",
         emailParams,
-        userID
+        "cq54bXuRzSGqloTcU"
       );
 
       if (res.status === 200) {
@@ -80,6 +89,8 @@ function Consult() {
         setUserInput({
           name: "",
           email: "",
+          number: "",
+          company_name:"",
           message: "",
         });
       }
@@ -113,43 +124,49 @@ function Consult() {
               type="text"
               name="name"
               onChange={handleChange}
-              id="first-name"
-              placeholder="First Name"
+              value={userInput.name}
+              id="name"
+              placeholder="Enter your full name"
               className="bg-[#F4F4F4] h-16 flex w-full rounded-sm px-4 focus:border-[1px] focus:border-[var(--primary-color)]"
             />
             <input
-              type="text"
-              name="last_name"
-              id="last-name"
-              placeholder="Last Name"
+              type="email"
+              name="email"
+              id="email"
+              value={userInput.email}
+              onChange={handleChange}
+              placeholder="Enter your E-mail"
               className="bg-[#F4F4F4] h-16 flex w-full rounded-sm px-4 focus:border-[1px] focus:border-[var(--primary-color)]"
             />
           </div>
           <div className="flex flex-wrap md:flex-nowrap w-full gap-4">
-            <input
-              type="email"
+            <PhoneNumberInput
+              value={userInput.number}
               onChange={handleChange}
-              name="email"
-              value={userInput.email}
-              id="email"
-              placeholder="Email Address"
+            />
+            <input
+              type="text"
+              onChange={handleChange}
+              name="company_name"
+              value={userInput.company_name}
+              id="company_name"
+              placeholder="Enter your company’s name"
               className="bg-[#F4F4F4] h-16 flex w-full rounded-sm px-4 focus:border-[1px] focus:border-[var(--primary-color)]"
             />
-            <PhoneNumberInput />
           </div>
           <div className="flex w-full">
             <textarea
               name="message"
-              id="case"
+              id="message"
               value={userInput.message}
               onChange={handleChange}
-              placeholder="Case Details"
+              placeholder="Your message here"
               className="bg-[#F4F4F4] h-72 w-full rounded-sm p-4 focus:border-[1px] focus:border-[var(--primary-color)]"
             ></textarea>
           </div>
           <button
             name="user_first_name"
-            className="font-styrene flex w-full justify-center items-center font-medium text-base bg-[var(--primary-color)] text-[#FFFFFF] px-8 py-3 transition-all hover:opacity-80"
+            className="font-styrene flex w-full justify-center items-center font-medium text-base bg-[var(--primary-color)] text-[#FFFFFF] px-8 py-3 transition-all hover:bg-black"
           >
             Send a Message
           </button>

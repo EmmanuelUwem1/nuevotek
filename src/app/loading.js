@@ -1,8 +1,27 @@
-// components/Loading.js
-export default function Loading() {
-  return (
-    <div className="flex fixed z-[3000] bg-[var(--background)] h-screen flex-col items-center justify-center text-center">
-      <p className="text-2xl font-semibold">Loading, please wait...</p>
-    </div>
-  );
-}
+// components/LoadingWrapper.js
+"use client";
+// import React, { useState, useEffect } from "react";
+import Load from "./load";
+
+
+function Loading() {
+     
+ 
+  const [wait, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000); // 3 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (wait) {
+    return <Load />;
+  }
+  return <Load />
+
+
+};
+
+export default Loading;
