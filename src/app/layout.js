@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import SplashScreen from "@/components/splashScreen";
 
 export const metadata = {
   title: "Nuevotek",
@@ -41,10 +42,12 @@ const myFont = localFont({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={myFont.className}>
+      <body className={`${myFont.className} relative`}>
+        <SplashScreen>
         <Header />
         <main className="relative">{children}</main>
         <Footer />
+        </SplashScreen>
       </body>
     </html>
   );
