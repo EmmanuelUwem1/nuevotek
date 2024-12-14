@@ -31,8 +31,8 @@ export default function SplashScreen({ children }) {
 
           <div className="relative rounded-full flex overflow-hidden my-4 h-1 w-80 bg-[#DCDCDC]">
             <motion.div
-              initial={{ transformOrigin: screenLeft, scaleX: 0 }}
-              animate={{ transformOrigin: screenLeft, scaleX: 100 }}
+              initial={{ transformOrigin: "left" , scaleX: 0 }}
+              animate={{ transformOrigin: "left", scaleX: 100 }}
               transition={{ duration: 500 }}
               className="absolute left-0 top-0 w-full h-full bg-[var(--primary-color)] "
             ></motion.div>
@@ -54,5 +54,5 @@ export default function SplashScreen({ children }) {
     );
   }
 
-  return <div className="min-h-screen bg-background">{children}</div>;
+  return <>{children}</>;
 }
