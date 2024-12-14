@@ -1,10 +1,14 @@
-
+"use client"
 import Image from "next/image";
 import GetInTouch from "./components/getInTouch";
+import { motion } from "framer-motion";
 function Contact() {
-    
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    >
       <div className="w-full h-56 mb-4 md:h-64 relative flex flex-col justify-center items-center ">
         <Image
           alt=""
@@ -24,9 +28,9 @@ function Contact() {
         </div>
       </div>
       <div className="flex w-full px-4 sm:px-8 lg:px-20 justify-center items-center">
-        <GetInTouch/>
+        <GetInTouch />
       </div>
-    </>
+    </motion.div>
   );
 }
 

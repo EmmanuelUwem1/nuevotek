@@ -1,12 +1,17 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import Services from "@/components/services";
 import Consult from "@/app/contact/components/consult";
-
+import {motion} from 'framer-motion'
 
 export default function Home() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{duration:.2}}
+    >
       <section className="md:h-screen h-[90svh] relative flex w-full bg-slate-800 object-center overflow-hidden">
         <Image
           src={"/hero bg.png"}
@@ -75,6 +80,6 @@ export default function Home() {
         </div>
       </section>
       <Consult />
-    </>
+    </motion.div>
   );
 }

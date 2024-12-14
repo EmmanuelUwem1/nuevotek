@@ -1,9 +1,14 @@
+"use client"
 import Image from "next/image";
 import moreServices from "./components/moreServiceData";
-
+import { motion } from "framer-motion";
 function Services() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    >
       <h2 className="text-black font-medium text-lg lg:text-2xl lg:pl-20 sm:pl-8 pl-4 pt-16">
         Our
       </h2>
@@ -56,19 +61,30 @@ function Services() {
             <div
               key={service.title}
               className="flex items-start justify-between w-full md:w-[48%] rounded-lg bg-white border-[1px] border-[#D0D0D0] gap-3 px-6 py-10"
-              >
-                  <span className="relative flex justify-center items-center w-32 h-32 sm:h-16 sm:w-16">
-                      <Image alt="" src={service.image} height={60} width={60} objectFit="contain" objectPosition="center"></Image>
-                  </span>
-                  <div className="flex flex-col gap-6 items-start justify-between">
-                      <h2 className="font-bold text-2xl text-[var(--primary-color)]">{service.title}</h2>
-                      <p className="text-base font-normal text-[var(--brand-black)]">{ service.description}</p>
-                  </div>
+            >
+              <span className="relative flex justify-center items-center w-32 h-32 sm:h-16 sm:w-16">
+                <Image
+                  alt=""
+                  src={service.image}
+                  height={60}
+                  width={60}
+                  objectFit="contain"
+                  objectPosition="center"
+                ></Image>
+              </span>
+              <div className="flex flex-col gap-6 items-start justify-between">
+                <h2 className="font-bold text-2xl text-[var(--primary-color)]">
+                  {service.title}
+                </h2>
+                <p className="text-base font-normal text-[var(--brand-black)]">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 

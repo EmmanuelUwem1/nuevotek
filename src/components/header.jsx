@@ -8,6 +8,7 @@ import { Twirl as Hamburger } from "hamburger-react";
 function Header() {
   const pathname = usePathname();
   const [navMenuOpen, setNavmenu] = useState(false);
+  const [brochureOpen, setBrochure] = useState(false);
 
 
 
@@ -89,7 +90,10 @@ function Header() {
                   ? "active lg:text-[var(--primary-color)]"
                   : "bottom"
               }`}
-              onClick={() => setNavmenu(false)}
+              onClick={() => {
+                setNavmenu(false); 
+                setBrochure(false)
+              }}
             >
               {navLink.title}
             </Link>
@@ -97,10 +101,13 @@ function Header() {
 
           <Link
             href={"#"}
-            className={`font-styrene font-medium text-base bg-[var(--primary-color)] text-[#FFFFFF] px-8 py-3 rounded transition-all hover:opacity-80 ${
+            className={`font-styrene font-medium text-base bg-[var(--primary-color)] text-[#FFFFFF] px-8 py-3 rounded transition-all hover:bg-black ${
               navMenuOpen ? "bg-black" : ""
             }`}
-            onClick={() => setNavmenu(false)}
+            onClick={() => {
+              setNavmenu(false);
+              setBrochure(!brochureOpen);
+            }}
           >
             Our Brochure
           </Link>
@@ -121,6 +128,14 @@ function Header() {
           />
         </div>
       </div>
+      {/* <embed src="/Nuevotek Logo Rundown 2.pdf" className={`w-screen ${brochureOpen? "" : "hidden"} `}width="800px" height="2100px" /> */}
+      <iframe
+        src="/Nuevotek Logo Rundown 2.pdf"
+        width="100%"
+        height="100%"
+        frameBorder="0"
+        className={`w-screen h-screen ${brochureOpen ? "" : "hidden"} `}
+      ></iframe>
     </header>
   );
 }

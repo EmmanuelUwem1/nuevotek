@@ -1,9 +1,14 @@
+"use client"
 import Slider from "./components/slider";
 import Image from "next/image";
+import {motion} from 'framer-motion'
 
 function About() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{duration:.2}}>
       <h2 className="text-black font-medium text-lg lg:text-2xl lg:pl-20 sm:pl-8 pl-4 pt-16">
         About
       </h2>
@@ -94,7 +99,7 @@ function About() {
             </p>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 
