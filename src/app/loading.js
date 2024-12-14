@@ -1,6 +1,6 @@
 // components/LoadingWrapper.js
 "use client";
-// import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Load from "./load";
 
 

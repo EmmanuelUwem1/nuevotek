@@ -1,6 +1,6 @@
-import Consult from "./components/consult";
-import Image from "next/image";
 
+import Image from "next/image";
+import GetInTouch from "./components/getInTouch";
 function Contact() {
     
   return (
@@ -23,8 +23,8 @@ function Contact() {
           </span>
         </div>
       </div>
-      <div className="flex px-4 sm:px-8 lg:px-20 justify-center items-center">
-        <Consult />
+      <div className="flex w-full px-4 sm:px-8 lg:px-20 justify-center items-center">
+        <GetInTouch/>
       </div>
     </>
   );
