@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import servicesData from '../app/services/components/servicesData';
+import {motion} from 'framer-motion'
 
 function Services() {
   return (
@@ -13,7 +14,11 @@ function Services() {
 
       <div className="flex justify-center lg:justify-start items-start gap-4 flex-wrap w-full">
         {servicesData.map((service) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: .8 }}
+            
             key={service.title}
             className="flex flex-col justify-normal items-start gap-6 bg-white py-10 px-11 rounded-xl border-[#D0D0D0] border-[1px] w-fit lg:w-[32%] h-80 cursor-pointer cards-hover overflow-hidden"
           >
@@ -33,7 +38,7 @@ function Services() {
             <p className="font-styrene font-normal text-base leading-5 flex text-justify text-[#000000]">
               {service.detail}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
