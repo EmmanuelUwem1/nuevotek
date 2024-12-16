@@ -39,7 +39,7 @@ function Header() {
             nuevoteksolutions@gmail.com
           </a>
         </span>
-        <span className="flex justify-center items-center w-fit text-white gap-1 text-[0.6rem] sm:text-base text-right">
+        {/* <span className="flex justify-center items-center w-fit text-white gap-1 text-[0.6rem] sm:text-base text-right">
           <span className="sm:h-5 sm:w-5 h-3 w-3 flex justify-center items-center relative">
             <Image
               alt=""
@@ -62,7 +62,7 @@ function Header() {
           >
             07080903902
           </a>
-        </span>
+        </span> */}
       </div>
       <div className="flex w-full justify-between items-center px-4 sm:px-8 lg:px-20 h-14 md:h-20">
         <Link
