@@ -2,7 +2,7 @@ import Form from "../form";
 import Image from "next/image";
 function Consult(){
   return (
-    <section className="flex md:pl-20 sm:pl-8 flex-wrap pl-4 w-full py-16">
+    <section className="flex md:pl-20 sm:pl-8 flex-wrap-reverse pl-4 w-full py-16">
       <div className="flex flex-col w-full md:w-1/2 justify-start items-start h-full">
         <h2 className="font-styrene font-medium text-4xl lg:text-6xl text-[var(--primary-color)]">
           Get Free
@@ -16,7 +16,7 @@ function Consult(){
         </p>
         <Form />
       </div>
-      <div className="flex justify-center items-center w-1/2 relative h-auto">
+      <div className="flex justify-center items-center sm:w-1/2 w-full relative sm:h-auto sm:mb-0 mb-8 h-96">
         <Image
           src={"/happy business.png"}
           alt=""
