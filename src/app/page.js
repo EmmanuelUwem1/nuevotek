@@ -37,7 +37,7 @@ export default function Home() {
             See all Solutions
           </Link>
         </div>
-        <span className=" flex justify-center items-center overflow-hidden h-12 w-12 md:h-20 md:w-20 fixed md:bottom-8 bottom-4 md:right-10 right-5 z-[1000]">
+        <span className=" hidden justify-center items-center overflow-hidden h-12 w-12 md:h-20 md:w-20 fixed md:bottom-8 bottom-4 md:right-10 right-5 z-[1000]">
           <Link alt={"whatsApp"} href="#">
             <Image
               alt="WhatsApp"
