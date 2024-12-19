@@ -7,7 +7,7 @@ function Footer() {
       <div className="bg-[#D8D8D8] w-full h-[2px]"></div>
       <div className="flex justify-between items-center gap-4 h-16">
         <p className="font-styrene font-medium text-[0.6rem] md:text-[0.8rem]">
-          Copyright © 2024 Neuvotech. All Rights Reserved
+          Copyright © 2024 Nuevotek. All Rights Reserved
         </p>
         <div className="flex justify-between items-center gap-7">
           <Link href={"/"} className="font-styrene font-medium text-[0.6rem] md:text-[0.8rem]">
