@@ -78,10 +78,10 @@ function Form() {
       };
 
       const res = await emailjs.send(
-        "service_srgtzqd",
-        "template_0g4uc1a",
+        "service_ssdbcye",
+        "template_5vxynor",
         emailParams,
-        "cq54bXuRzSGqloTcU"
+        "xlZ4YqJktvCt5XVp7"
       );
 
       if (res.status === 200) {
