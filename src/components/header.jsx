@@ -36,7 +36,7 @@ function Header() {
             href="mailto:nuevoteksolutions@gmail.com"
             className="text-white font-styrene sm:text-sm font-medium text-[0.6rem]"
           >
-            nuevoteksolutions@gmail.com
+            info@nuevotek.ng
           </a>
         </span>
         {/* <span className="flex justify-center items-center w-fit text-white gap-1 text-[0.6rem] sm:text-base text-right">
