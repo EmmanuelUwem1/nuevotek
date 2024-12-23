@@ -33,7 +33,7 @@ function Header() {
             ></Image>
           </span>
           <a
-            href="mailto:nuevoteksolutions@gmail.com"
+            href="mailto:info@nuevotek.ng"
             className="text-white font-styrene sm:text-sm font-medium text-[0.6rem]"
           >
             info@nuevotek.ng
