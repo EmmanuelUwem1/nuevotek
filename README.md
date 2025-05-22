@@ -1,4 +1,5 @@
-# 🌐 Nuevotek
+# 🌐 ![brand name](https://github.com/user-attachments/assets/d185a41b-ae5e-49ca-b60b-b73df6551f61)
+
 
 Nuevotek is a **Next.js-powered website** for a **network infrastructure company**, designed for a modern, engaging user experience. With **Framer Motion** for animations, **Swiper.js** for smooth carousels, and **EmailJS** integration for seamless email communication, it delivers a professional yet dynamic interface.
 
@@ -22,7 +23,7 @@ Nuevotek is a **Next.js-powered website** for a **network infrastructure company
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/your-username/Nuevotek.git
+   git clone [https://github.com/EmmanuelUwem1/nuevotek.git]
    cd Nuevotek
     
 
