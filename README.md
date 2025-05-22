@@ -1,3 +1,31 @@
+# 🌐 Nuevotek
+
+Nuevotek is a **Next.js-powered website** for a **network infrastructure company**, designed for a modern, engaging user experience. With **Framer Motion** for animations, **Swiper.js** for smooth carousels, and **EmailJS** integration for seamless email communication, it delivers a professional yet dynamic interface.
+
+## 🚀 Features
+
+- **Fast & Optimized** – Built with **Next.js** for high performance.
+- **Smooth Animations** – Utilizes **Framer Motion** for elegant UI transitions.
+- **Interactive Sliders** – Powered by **Swiper.js** for engaging carousels.
+- **Email Integration** – Sends messages directly using **EmailJS**, no backend needed.
+- **Responsive Design** – Fully optimized for mobile and desktop users.
+
+## 🛠 Tech Stack
+
+- **Next.js** – High-performance React framework.
+- **Framer Motion** – Animated UI interactions.
+- **Swiper.js** – Smooth carousel for visual engagement.
+- **Tailwind CSS** – Modern styling framework.
+- **EmailJS** – Integrated client-side email service.
+
+## 🔧 Installation & Setup
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/your-username/Nuevotek.git
+   cd Nuevotek
+    
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
