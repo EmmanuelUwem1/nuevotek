@@ -48,6 +48,10 @@ function Form() {
     message: "",
     number: "",
   });
+  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+ 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -71,9 +75,7 @@ function Form() {
       toast.error("Please fill in all fields.");
       return;
     }
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
     if (!serviceId || !templateId || !publicKey) {
       toast.error("Email service configuration is missing.");
       return;
