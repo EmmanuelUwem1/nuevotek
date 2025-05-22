@@ -143,5 +143,13 @@ nav{
   }
 }
 
+@media (width < 500px){
+  .flex-to-col{
+    flex-direction: column;
+    
+    gap: .5rem;
+  }
+}
+
 
 /* swiper */

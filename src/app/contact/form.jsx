@@ -71,6 +71,13 @@ function Form() {
       toast.error("Please fill in all fields.");
       return;
     }
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error("Email service configuration is missing.");
+      return;
+    }
 
     try {
       const emailParams = {
@@ -83,10 +90,10 @@ function Form() {
       };
 
       const res = await emailjs.send(
-        "service_ssdbcye",
-        "template_5vxynor",
+        serviceId,
+        templateId,
         emailParams,
-        "xlZ4YqJktvCt5XVp7"
+        publicKey
       );
 
       if (res.status === 200) {
